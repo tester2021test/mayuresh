@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- Viewport updated for Notch support (viewport-fit=cover) -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, maximum-scale=1.0, user-scalable=no">
+    <title>Samarth Properties | Top Real Estate Agent in Ambernath & Vadvali</title>
+    <meta name="description" content="Premium Real Estate Services in Ambernath. We deal in Industrial NA Plots, R-Zone Land, 1BHK/2BHK Flats in Vadvali Section, and Luxury Row Houses. Verified & Trusted.">
+    
+    <!-- iOS Web App Capability -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="theme-color" content="#be185d">
+
+    <!-- Open Graph for Social Media -->
+    <meta property="og:title" content="Samarth Properties | Secure Your Future Today">
+    <meta property="og:description" content="Verified Industrial Plots, Residential Flats, and Row Houses in Ambernath. Trusted by 500+ families.">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1600596542815-e32cb718d61b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80">
+    <meta property="og:url" content="https://samarthproperties.com">
+    <meta property="og:type" content="business.business">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <!-- Schema.org JSON-LD -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "RealEstateAgent",
+      "name": "Samarth Properties",
+      "image": "https://images.unsplash.com/photo-1600596542815-e32cb718d61b",
+      "description": "Trusted Real Estate Agent in Ambernath specializing in Industrial NA plots and Residential properties.",
+      "telephone": "+918669095752",
+      "priceRange": "₹20 Lakhs - ₹5 Crores"
+    }
+    </script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Outfit', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    },
+                    colors: {
+                        brand: {
+                            dark: '#0f172a',
+                            magenta: '#be185d',
+                            magentaDeep: '#831843',
+                            gold: '#fbbf24',
+                            goldLight: '#fcd34d',
+                        }
+                    },
+                    backgroundImage: {
+                        'hero-pattern': "url('https://images.unsplash.com/photo-1600596542815-e32cb718d61b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80')",
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Glassmorphism */
+        .glass {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        /* Gradient Text */
+        .text-gradient {
+            background: linear-gradient(to right, #be185d, #fbbf24);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Parallax Hero - Optimized for Mobile */
+        .hero-section {
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            /* Using the new high-quality hero image here directly in style as backup/override */
+            background-image: url('https://images.unsplash.com/photo-1600596542815-e32cb718d61b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+        }
+
+        /* IOS Fix: Disable fixed background on mobile to prevent jitter */
+        @media (max-width: 768px) {
+            .hero-section {
+                background-attachment: scroll;
+            }
+            /* Prevent horizontal scroll issues */
+            body {
+                width: 100%;
+                overflow-x: hidden;
+            }
+        }
+
+        /* Mobile Sticky Bar Shadow & Safe Area */
+        .sticky-bar-shadow {
+            box-shadow: 0 -4px 20px rgba(0,0,0,0.1);
+            /* Handle iPhone X/11/12/13/14/15 Home Indicator */
+            padding-bottom: env(safe-area-inset-bottom); 
+        }
+
+        /* Remove Tap Highlight on Mobile */
+        * {
+            -webkit-tap-highlight-color: transparent;
+        }
+        
+        /* Smooth Scroll */
+        html { scroll-behavior: smooth; }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #f1f1f1; }
+        ::-webkit-scrollbar-thumb { background: #be185d; border-radius: 4px; }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 antialiased overflow-x-hidden pb-20 md:pb-0">
+
+    <!-- Navigation (Glass Effect) -->
+    <nav class="fixed w-full z-50 glass transition-all duration-300 top-0 pt-[env(safe-area-inset-top)]">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20 items-center">
+                <!-- Logo -->
+                <a href="#" class="flex items-center gap-2 group">
+                    <div class="bg-brand-magenta text-white p-2.5 rounded-xl shadow-lg transform group-hover:rotate-12 transition duration-300">
+                        <i class="fa-solid fa-city text-xl"></i>
+                    </div>
+                    <div>
+                        <span class="font-serif font-bold text-2xl tracking-tight text-slate-900 block leading-none">Samarth</span>
+                        <span class="text-xs font-bold text-brand-magenta tracking-widest uppercase">Properties</span>
+                    </div>
+                </a>
+                
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex space-x-8 items-center">
+                    <a href="#home" class="text-slate-700 hover:text-brand-magenta font-semibold transition">Home</a>
+                    <a href="#investment" class="text-slate-700 hover:text-brand-magenta font-semibold transition">Industrial Plots</a>
+                    <a href="#residential" class="text-slate-700 hover:text-brand-magenta font-semibold transition">Residential</a>
+                    <a href="#contact" class="px-6 py-2.5 bg-brand-magenta text-white font-bold rounded-full shadow-lg hover:shadow-brand-magenta/50 hover:-translate-y-0.5 transition duration-300">
+                        Get Verified Deals
+                    </a>
+                </div>
+
+                <!-- Mobile Hamburger -->
+                <div class="md:hidden">
+                    <button onclick="toggleMenu()" class="text-slate-800 focus:outline-none p-4 rounded-full active:bg-gray-100">
+                        <i class="fa-solid fa-bars-staggered text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white/95 backdrop-blur-xl border-t border-gray-100 absolute w-full shadow-xl">
+            <div class="px-4 pt-4 pb-6 space-y-3">
+                <a href="#home" onclick="toggleMenu()" class="block px-3 py-3 text-lg font-medium text-gray-700 hover:bg-pink-50 rounded-lg active:scale-95 transition-transform">Home</a>
+                <a href="#investment" onclick="toggleMenu()" class="block px-3 py-3 text-lg font-medium text-gray-700 hover:bg-pink-50 rounded-lg active:scale-95 transition-transform">Industrial Investment</a>
+                <a href="#residential" onclick="toggleMenu()" class="block px-3 py-3 text-lg font-medium text-gray-700 hover:bg-pink-50 rounded-lg active:scale-95 transition-transform">Residential Homes</a>
+                <a href="#contact" onclick="toggleMenu()" class="block px-3 py-3 text-lg font-bold text-brand-magenta bg-pink-50 rounded-lg active:scale-95 transition-transform">Contact Us</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header id="home" class="hero-section relative h-screen min-h-[600px] flex items-center justify-center bg-brand-dark">
+        <!-- Dark Overlay -->
+        <div class="absolute inset-0 bg-gradient-to-br from-brand-dark/90 via-brand-dark/70 to-brand-magenta/30"></div>
+        
+        <div class="relative z-10 container mx-auto px-4 text-center mt-16" data-aos="fade-up" data-aos-duration="1000">
+            <span class="inline-block py-1 px-3 rounded-full bg-brand-gold/20 text-brand-gold border border-brand-gold/50 text-sm font-bold tracking-wide mb-4 backdrop-blur-sm">
+                <i class="fa-solid fa-star mr-1"></i> No. 1 Trusted Agent in Ambernath
+            </span>
+            <h1 class="text-5xl md:text-7xl font-serif font-bold text-white leading-tight mb-6 drop-shadow-2xl">
+                Find Your <span class="text-gradient">Dream Space</span><br>Secure Your Future.
+            </h1>
+            <p class="text-xl text-gray-300 mb-10 max-w-2xl mx-auto font-light leading-relaxed">
+                Specializing in Industrial NA Plots, Luxury Row Houses, and Budget Flats in Vadvali Section. Verified papers, zero hidden costs.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="#residential" class="px-8 py-4 bg-brand-gold text-brand-dark font-bold rounded-lg shadow-[0_0_20px_rgba(251,191,36,0.4)] hover:bg-brand-goldLight transition transform active:scale-95">
+                    View Homes
+                </a>
+                <a href="#investment" class="px-8 py-4 bg-transparent border-2 border-white text-white font-bold rounded-lg hover:bg-white hover:text-brand-dark transition transform active:scale-95">
+                    Land Investment
+                </a>
+            </div>
+            
+            <!-- Quick Stats -->
+            <div class="mt-16 grid grid-cols-2 md:grid-cols-4 gap-8 border-t border-white/10 pt-8 max-w-4xl mx-auto">
+                <div class="p-2">
+                    <div class="text-3xl font-bold text-white">500+</div>
+                    <div class="text-sm text-gray-400">Happy Families</div>
+                </div>
+                <div class="p-2">
+                    <div class="text-3xl font-bold text-white">50+</div>
+                    <div class="text-sm text-gray-400">Acres Sold</div>
+                </div>
+                <div class="p-2">
+                    <div class="text-3xl font-bold text-white">100%</div>
+                    <div class="text-sm text-gray-400">Clear Titles</div>
+                </div>
+                <div class="p-2">
+                    <div class="text-3xl font-bold text-white">10+</div>
+                    <div class="text-sm text-gray-400">Years Trust</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Wave Bottom -->
+        <div class="absolute bottom-0 w-full leading-none z-20 pointer-events-none">
+            <svg class="block w-full h-12 md:h-24 text-slate-50" viewBox="0 0 1440 320" preserveAspectRatio="none">
+                <path fill="currentColor" fill-opacity="1" d="M0,224L48,213.3C96,203,192,181,288,181.3C384,181,480,203,576,224C672,245,768,267,864,261.3C960,256,1056,224,1152,197.3C1248,171,1344,149,1392,138.7L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
+            </svg>
+        </div>
+    </header>
+
+    <!-- MAGENTA SECTION: High Value Investment -->
+    <section id="investment" class="py-20 bg-slate-50 relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-sm font-bold tracking-widest text-brand-magenta uppercase mb-2">For High ROI Seekers</h2>
+                <h3 class="text-3xl md:text-5xl font-serif font-bold text-brand-dark">Premium Land Opportunities</h3>
+                <p class="mt-4 text-gray-600 max-w-2xl mx-auto">Don't just buy property, buy potential. We specialize in large-scale Industrial and NA land deals.</p>
+            </div>
+
+            <div class="relative bg-gradient-to-r from-brand-dark via-purple-900 to-brand-magenta rounded-3xl p-1 shadow-2xl overflow-hidden" data-aos="zoom-in">
+                <div class="absolute top-0 right-0 -mr-20 -mt-20 w-80 h-80 bg-white opacity-10 blur-3xl rounded-full"></div>
+                
+                <div class="bg-brand-dark/40 backdrop-blur-sm rounded-[20px] p-8 md:p-12 text-white grid md:grid-cols-2 gap-12 items-center relative z-10">
+                    <div>
+                        <h4 class="text-3xl font-bold mb-6">Industrial NA Plots & JV</h4>
+                        <ul class="space-y-4">
+                            <li class="flex items-start">
+                                <i class="fa-solid fa-circle-check text-brand-gold mt-1 mr-3 text-xl"></i>
+                                <div>
+                                    <strong class="block text-lg">Strategic Locations</strong>
+                                    <span class="text-gray-300 text-sm">Close to MIDC areas, Highways, and Railway connectivity.</span>
+                                </div>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fa-solid fa-circle-check text-brand-gold mt-1 mr-3 text-xl"></i>
+                                <div>
+                                    <strong class="block text-lg">Clear Documentation</strong>
+                                    <span class="text-gray-300 text-sm">7/12 extract verified, Zone certificates available.</span>
+                                </div>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fa-solid fa-circle-check text-brand-gold mt-1 mr-3 text-xl"></i>
+                                <div>
+                                    <strong class="block text-lg">High Appreciation</strong>
+                                    <span class="text-gray-300 text-sm">Proven track record of 20-30% annual growth in select zones.</span>
+                                </div>
+                            </li>
+                        </ul>
+                        <div class="mt-8">
+                            <a href="#contact" class="inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-bold rounded-md text-brand-magenta bg-white hover:bg-gray-100 transition shadow-lg active:scale-95">
+                                Download Brochure <i class="fa-solid fa-download ml-2"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="relative h-64 md:h-full min-h-[300px] rounded-xl overflow-hidden shadow-2xl border border-white/20 group">
+                        <!-- Updated to Construction/Land related image -->
+                        <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Industrial Land Investment" class="absolute inset-0 w-full h-full object-cover transform group-hover:scale-110 transition duration-700">
+                        <div class="absolute bottom-0 left-0 bg-gradient-to-t from-black/80 to-transparent p-6 w-full">
+                            <span class="text-brand-gold font-bold">Maharashtra & Gujarat</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- RESIDENTIAL SECTION -->
+    <section id="residential" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-12" data-aos="fade-right">
+                <div>
+                    <h2 class="text-sm font-bold tracking-widest text-brand-magenta uppercase mb-2">Residential Collections</h2>
+                    <h3 class="text-3xl md:text-5xl font-serif font-bold text-brand-dark">Find Your Perfect Home</h3>
+                </div>
+                <div class="hidden md:block">
+                    <a href="#contact" class="text-brand-magenta font-bold hover:underline">View All Listings <i class="fa-solid fa-arrow-right ml-1"></i></a>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Card 1 -->
+                <div class="group bg-white rounded-2xl border border-gray-100 shadow-lg hover:shadow-2xl hover:shadow-brand-magenta/10 transition duration-500 overflow-hidden" data-aos="fade-up" data-aos-delay="0">
+                    <div class="relative h-64 overflow-hidden">
+                        <!-- Updated to cozy interior -->
+                        <img src="https://images.unsplash.com/photo-1493809842364-78817add7ffb?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="1BHK Flat Interior" class="w-full h-full object-cover transform group-hover:scale-110 transition duration-700">
+                        <div class="absolute top-4 right-4 bg-brand-gold text-brand-dark text-xs font-bold px-3 py-1 rounded shadow-sm">Hot Deal</div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center gap-2 text-sm text-gray-500 mb-3">
+                            <i class="fa-solid fa-location-dot text-brand-magenta"></i> Vadvali Section
+                        </div>
+                        <h4 class="text-xl font-bold text-slate-900 mb-2 group-hover:text-brand-magenta transition">1RK, 1BHK & 2BHK Smart Homes</h4>
+                        <p class="text-gray-600 text-sm mb-4">Near Bhakti Shakti Chowk. Minimal paperwork, maximum comfort.</p>
+                        <div class="border-t border-gray-100 pt-4 flex justify-between items-center">
+                            <span class="text-brand-dark font-bold">₹ Budget Friendly</span>
+                            <button onclick="scrollToContact('1BHK/2BHK')" class="w-10 h-10 rounded-full bg-slate-100 flex items-center justify-center text-brand-magenta group-hover:bg-brand-magenta group-hover:text-white transition active:scale-90">
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="group bg-white rounded-2xl border border-gray-100 shadow-lg hover:shadow-2xl hover:shadow-brand-magenta/10 transition duration-500 overflow-hidden" data-aos="fade-up" data-aos-delay="100">
+                    <div class="relative h-64 overflow-hidden">
+                        <!-- Updated to modern villa -->
+                        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Luxury Row House Ambernath" class="w-full h-full object-cover transform group-hover:scale-110 transition duration-700">
+                        <div class="absolute top-4 right-4 bg-brand-magenta text-white text-xs font-bold px-3 py-1 rounded shadow-sm">Premium</div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center gap-2 text-sm text-gray-500 mb-3">
+                            <i class="fa-solid fa-location-dot text-brand-magenta"></i> Ambernath East
+                        </div>
+                        <h4 class="text-xl font-bold text-slate-900 mb-2 group-hover:text-brand-magenta transition">Luxury Row Houses</h4>
+                        <p class="text-gray-600 text-sm mb-4">Independent living with private terrace and parking. Gated community feel.</p>
+                        <div class="border-t border-gray-100 pt-4 flex justify-between items-center">
+                            <span class="text-brand-dark font-bold">₹ 70L - 90L</span>
+                            <button onclick="scrollToContact('Row House')" class="w-10 h-10 rounded-full bg-slate-100 flex items-center justify-center text-brand-magenta group-hover:bg-brand-magenta group-hover:text-white transition active:scale-90">
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="group bg-white rounded-2xl border border-gray-100 shadow-lg hover:shadow-2xl hover:shadow-brand-magenta/10 transition duration-500 overflow-hidden" data-aos="fade-up" data-aos-delay="200">
+                    <div class="relative h-64 overflow-hidden">
+                        <!-- Updated to keys in hand -->
+                        <img src="https://images.unsplash.com/photo-1560184897-ae75f418493e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Rental Properties" class="w-full h-full object-cover transform group-hover:scale-110 transition duration-700">
+                        <div class="absolute top-4 right-4 bg-blue-600 text-white text-xs font-bold px-3 py-1 rounded shadow-sm">Ready to Move</div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center gap-2 text-sm text-gray-500 mb-3">
+                            <i class="fa-solid fa-location-dot text-brand-magenta"></i> Prime Areas
+                        </div>
+                        <h4 class="text-xl font-bold text-slate-900 mb-2 group-hover:text-brand-magenta transition">Rent / Lease</h4>
+                        <p class="text-gray-600 text-sm mb-4">Shops for business or flats for family. Verified owners only.</p>
+                        <div class="border-t border-gray-100 pt-4 flex justify-between items-center">
+                            <span class="text-brand-dark font-bold">Call for Rates</span>
+                            <button onclick="scrollToContact('Rent')" class="w-10 h-10 rounded-full bg-slate-100 flex items-center justify-center text-brand-magenta group-hover:bg-brand-magenta group-hover:text-white transition active:scale-90">
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT FORM SECTION -->
+    <section id="contact" class="py-20 bg-brand-dark text-white relative overflow-hidden">
+        <!-- Background decorative blob -->
+        <div class="absolute top-0 left-0 w-full h-full overflow-hidden opacity-20 pointer-events-none">
+             <div class="absolute -top-24 -left-24 w-96 h-96 bg-brand-magenta rounded-full blur-3xl"></div>
+             <div class="absolute bottom-0 right-0 w-96 h-96 bg-blue-600 rounded-full blur-3xl"></div>
+        </div>
+
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="bg-white/5 backdrop-blur-lg border border-white/10 rounded-3xl overflow-hidden shadow-2xl flex flex-col md:flex-row">
+                <!-- Info Side -->
+                <div class="md:w-5/12 p-10 bg-brand-magenta/90 text-white flex flex-col justify-between">
+                    <div>
+                        <h3 class="text-3xl font-serif font-bold mb-6">Let's Discuss Your Future</h3>
+                        <p class="text-pink-100 mb-8">Whether you are buying your first home or investing in industrial land, we are here to guide you.</p>
+                        
+                        <div class="space-y-6">
+                            <div class="flex items-center">
+                                <div class="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center mr-4">
+                                    <i class="fa-solid fa-phone"></i>
+                                </div>
+                                <div>
+                                    <p class="text-xs text-pink-200 uppercase tracking-wide">Call Us</p>
+                                    <p class="font-bold text-lg">+91 86690 95752</p>
+                                    <p class="text-sm opacity-80">Available 9 AM - 9 PM</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center">
+                                <div class="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center mr-4">
+                                    <i class="fa-solid fa-location-dot"></i>
+                                </div>
+                                <div>
+                                    <p class="text-xs text-pink-200 uppercase tracking-wide">Visit Office</p>
+                                    <p class="font-bold">Vadvali Section</p>
+                                    <p class="text-sm">Near Bhakti Shakti Chowk, Ambernath (E)</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-12 md:mt-0">
+                        <div class="flex space-x-4">
+                            <a href="https://wa.me/918669095752" class="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center hover:bg-white hover:text-brand-magenta transition"><i class="fa-brands fa-whatsapp"></i></a>
+                            <a href="#" class="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center hover:bg-white hover:text-brand-magenta transition"><i class="fa-brands fa-instagram"></i></a>
+                            <a href="#" class="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center hover:bg-white hover:text-brand-magenta transition"><i class="fa-brands fa-facebook-f"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Form Side -->
+                <div class="md:w-7/12 p-10 bg-white">
+                    <h3 class="text-2xl font-bold text-gray-800 mb-6">Request a Site Visit via WhatsApp</h3>
+                    <form onsubmit="submitForm(event)" class="space-y-5">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-1">Your Name</label>
+                                <!-- text-base ensures 16px font size to prevent IOS zoom -->
+                                <input type="text" id="user-name" required class="w-full px-4 py-3 rounded-lg bg-gray-50 border border-gray-200 focus:border-brand-magenta focus:ring-2 focus:ring-pink-200 transition outline-none text-gray-800 text-base" placeholder="e.g. Rahul Patil">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-1">Phone Number</label>
+                                <input type="tel" id="user-phone" required class="w-full px-4 py-3 rounded-lg bg-gray-50 border border-gray-200 focus:border-brand-magenta focus:ring-2 focus:ring-pink-200 transition outline-none text-gray-800 text-base" placeholder="+91 99999 99999">
+                            </div>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1">Interested In</label>
+                            <select id="interest-select" class="w-full px-4 py-3 rounded-lg bg-gray-50 border border-gray-200 focus:border-brand-magenta focus:ring-2 focus:ring-pink-200 transition outline-none text-gray-800 text-base">
+                                <option>Buy 1BHK/2BHK Flat</option>
+                                <option>Industrial NA Plot</option>
+                                <option>Row House / Bungalow</option>
+                                <option>Rent a Property</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1">Message (Optional)</label>
+                            <textarea id="user-message" rows="3" class="w-full px-4 py-3 rounded-lg bg-gray-50 border border-gray-200 focus:border-brand-magenta focus:ring-2 focus:ring-pink-200 transition outline-none text-gray-800 text-base" placeholder="Any specific requirement?"></textarea>
+                        </div>
+                        <button type="submit" class="w-full py-4 bg-green-500 text-white font-bold rounded-lg shadow-xl hover:bg-green-600 transition transform hover:-translate-y-1 active:scale-95">
+                            <i class="fa-brands fa-whatsapp mr-2 text-xl"></i> Send on WhatsApp
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-400 py-12 border-t border-gray-800 mb-20 md:mb-0">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-6">
+            <div class="text-center md:text-left">
+                <span class="text-2xl font-serif font-bold text-white">Samarth<span class="text-brand-magenta">Properties</span></span>
+                <p class="text-sm mt-2">Trust. Transparency. Timing.</p>
+            </div>
+            <div class="flex gap-6 text-sm font-medium">
+                <a href="#home" class="hover:text-white transition">Home</a>
+                <a href="#investment" class="hover:text-white transition">Industrial</a>
+                <a href="#residential" class="hover:text-white transition">Residential</a>
+            </div>
+            <div class="text-sm">
+                &copy; 2024 Samarth Properties. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Mobile Sticky Action Bar -->
+    <div class="fixed bottom-0 left-0 w-full bg-white sticky-bar-shadow flex md:hidden z-50">
+        <a href="tel:+918669095752" class="flex-1 flex flex-col items-center justify-center py-3 bg-white text-brand-dark border-r border-gray-100 active:bg-gray-50">
+            <i class="fa-solid fa-phone text-brand-magenta text-lg mb-1 animate-pulse"></i>
+            <span class="text-xs font-bold">Call Now</span>
+        </a>
+        <a href="https://wa.me/918669095752?text=I%20am%20interested%20in%20property" class="flex-1 flex flex-col items-center justify-center py-3 bg-brand-magenta text-white active:bg-brand-magentaDeep">
+            <i class="fa-brands fa-whatsapp text-lg mb-1"></i>
+            <span class="text-xs font-bold">WhatsApp</span>
+        </a>
+    </div>
+
+    <!-- Animation Script -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            once: true,
+            duration: 800,
+            offset: 50,
+        });
+
+        function toggleMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        }
+
+        function scrollToContact(interest) {
+            const select = document.getElementById('interest-select');
+            select.value = interest;
+            document.getElementById('interest-select').scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+
+        function submitForm(event) {
+            event.preventDefault();
+            
+            // Get form values
+            const name = document.getElementById('user-name').value;
+            const phone = document.getElementById('user-phone').value;
+            const interest = document.getElementById('interest-select').value;
+            const message = document.getElementById('user-message').value;
+            
+            // Create WhatsApp message
+            const whatsappText = `*New Lead from Website*%0A------------------%0A*Name:* ${name}%0A*Phone:* ${phone}%0A*Interest:* ${interest}%0A*Message:* ${message}`;
+            
+            // Your WhatsApp number
+            const phoneNumber = "918669095752";
+            
+            // Open WhatsApp
+            const url = `https://wa.me/${phoneNumber}?text=${whatsappText}`;
+            window.open(url, '_blank');
+        }
+    </script>
+</body>
+</html>

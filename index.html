@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <!-- Viewport updated for Notch support (viewport-fit=cover) -->
@@ -10,7 +10,7 @@
     <!-- iOS Web App Capability -->
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <meta name="theme-color" content="#be185d">
+    <meta name="theme-color" content="#ffffff">
 
     <!-- Open Graph for Social Media -->
     <meta property="og:title" content="Samarth Properties | Secure Your Future Today">
@@ -25,7 +25,7 @@
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
     
     <!-- FontAwesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -51,20 +51,21 @@
             theme: {
                 extend: {
                     fontFamily: {
-                        sans: ['Outfit', 'sans-serif'],
+                        sans: ['Inter', 'sans-serif'],
                         serif: ['Playfair Display', 'serif'],
                     },
                     colors: {
                         brand: {
                             dark: '#0f172a',
                             magenta: '#be185d',
-                            magentaDeep: '#831843',
+                            magentaLight: '#fce7f3',
                             gold: '#fbbf24',
-                            goldLight: '#fcd34d',
                         }
                     },
-                    backgroundImage: {
-                        'hero-pattern': "url('https://images.unsplash.com/photo-1600596542815-e32cb718d61b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80')",
+                    boxShadow: {
+                        'glass': '0 8px 32px 0 rgba(31, 38, 135, 0.1)',
+                        'glass-hover': '0 8px 32px 0 rgba(190, 24, 93, 0.15)',
+                        'glow': '0 0 20px rgba(190, 24, 93, 0.3)',
                     }
                 }
             }
@@ -72,415 +73,415 @@
     </script>
 
     <style>
-        /* Glassmorphism */
-        .glass {
-            background: rgba(255, 255, 255, 0.9);
+        /* Modern Background Mesh Gradient */
+        body {
+            background-color: #f8fafc;
+            background-image: 
+                radial-gradient(at 0% 0%, rgba(190, 24, 93, 0.08) 0px, transparent 50%),
+                radial-gradient(at 100% 0%, rgba(251, 191, 36, 0.08) 0px, transparent 50%),
+                radial-gradient(at 100% 100%, rgba(15, 23, 42, 0.05) 0px, transparent 50%);
+            background-attachment: fixed;
+        }
+
+        /* Glassmorphism Classes */
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.65);
             backdrop-filter: blur(16px);
             -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+        }
+        
+        .glass-nav {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
             border-bottom: 1px solid rgba(255, 255, 255, 0.3);
         }
 
-        /* Gradient Text */
+        .glass-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.6);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .glass-card:hover {
+            background: rgba(255, 255, 255, 0.9);
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px -10px rgba(0,0,0,0.1);
+            border-color: rgba(190, 24, 93, 0.2);
+        }
+
+        /* Text Gradient */
         .text-gradient {
-            background: linear-gradient(to right, #be185d, #fbbf24);
+            background: linear-gradient(135deg, #be185d 0%, #fbbf24 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
 
-        /* Parallax Hero - Optimized for Mobile */
-        .hero-section {
-            background-attachment: fixed;
-            background-position: center;
-            background-repeat: no-repeat;
-            background-size: cover;
-            /* Using the new high-quality hero image here directly in style as backup/override */
-            background-image: url('https://images.unsplash.com/photo-1600596542815-e32cb718d61b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
-        }
-
-        /* IOS Fix: Disable fixed background on mobile to prevent jitter */
-        @media (max-width: 768px) {
-            .hero-section {
-                background-attachment: scroll;
-            }
-            /* Prevent horizontal scroll issues */
-            body {
-                width: 100%;
-                overflow-x: hidden;
-            }
-        }
-
-        /* Mobile Sticky Bar Shadow & Safe Area */
-        .sticky-bar-shadow {
-            box-shadow: 0 -4px 20px rgba(0,0,0,0.1);
-            /* Handle iPhone X/11/12/13/14/15 Home Indicator */
-            padding-bottom: env(safe-area-inset-bottom); 
-        }
-
-        /* Remove Tap Highlight on Mobile */
-        * {
-            -webkit-tap-highlight-color: transparent;
+        /* Mobile Adjustments */
+        .mobile-island-bar {
+            padding-bottom: env(safe-area-inset-bottom);
+            margin-bottom: env(safe-area-inset-bottom);
         }
         
-        /* Smooth Scroll */
+        /* Smooth Scroll & No Tap Highlight */
         html { scroll-behavior: smooth; }
-
+        * { -webkit-tap-highlight-color: transparent; }
+        
         /* Custom Scrollbar */
-        ::-webkit-scrollbar { width: 8px; }
-        ::-webkit-scrollbar-track { background: #f1f1f1; }
-        ::-webkit-scrollbar-thumb { background: #be185d; border-radius: 4px; }
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: transparent; }
+        ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 10px; }
+        ::-webkit-scrollbar-thumb:hover { background: #be185d; }
     </style>
 </head>
-<body class="bg-slate-50 text-slate-800 antialiased overflow-x-hidden pb-20 md:pb-0">
+<body class="text-slate-800 antialiased overflow-x-hidden pb-24 md:pb-0">
 
-    <!-- Navigation (Glass Effect) -->
-    <nav class="fixed w-full z-50 glass transition-all duration-300 top-0 pt-[env(safe-area-inset-top)]">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between h-20 items-center">
+    <!-- Floating Navigation (Glass Pill on Desktop) -->
+    <nav class="fixed w-full z-50 top-0 transition-all duration-300 px-4 pt-4">
+        <div class="glass-nav rounded-2xl max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 shadow-glass">
+            <div class="flex justify-between h-16 items-center">
                 <!-- Logo -->
                 <a href="#" class="flex items-center gap-2 group">
-                    <div class="bg-brand-magenta text-white p-2.5 rounded-xl shadow-lg transform group-hover:rotate-12 transition duration-300">
-                        <i class="fa-solid fa-city text-xl"></i>
+                    <div class="bg-gradient-to-br from-brand-magenta to-purple-600 text-white p-2 rounded-lg shadow-glow transform group-hover:rotate-12 transition duration-300">
+                        <i class="fa-solid fa-city text-lg"></i>
                     </div>
                     <div>
-                        <span class="font-serif font-bold text-2xl tracking-tight text-slate-900 block leading-none">Samarth</span>
-                        <span class="text-xs font-bold text-brand-magenta tracking-widest uppercase">Properties</span>
+                        <span class="font-serif font-bold text-xl tracking-tight text-slate-900 block leading-none">Samarth</span>
+                        <span class="text-[10px] font-bold text-brand-magenta tracking-[0.2em] uppercase">Properties</span>
                     </div>
                 </a>
                 
                 <!-- Desktop Menu -->
-                <div class="hidden md:flex space-x-8 items-center">
-                    <a href="#home" class="text-slate-700 hover:text-brand-magenta font-semibold transition">Home</a>
-                    <a href="#investment" class="text-slate-700 hover:text-brand-magenta font-semibold transition">Industrial Plots</a>
-                    <a href="#residential" class="text-slate-700 hover:text-brand-magenta font-semibold transition">Residential</a>
-                    <a href="#contact" class="px-6 py-2.5 bg-brand-magenta text-white font-bold rounded-full shadow-lg hover:shadow-brand-magenta/50 hover:-translate-y-0.5 transition duration-300">
-                        Get Verified Deals
+                <div class="hidden md:flex space-x-1 items-center bg-gray-100/50 p-1 rounded-full border border-white/50 backdrop-blur-sm">
+                    <a href="#home" class="px-5 py-2 text-sm font-medium text-slate-600 hover:text-brand-magenta hover:bg-white rounded-full transition-all">Home</a>
+                    <a href="#investment" class="px-5 py-2 text-sm font-medium text-slate-600 hover:text-brand-magenta hover:bg-white rounded-full transition-all">Industrial</a>
+                    <a href="#residential" class="px-5 py-2 text-sm font-medium text-slate-600 hover:text-brand-magenta hover:bg-white rounded-full transition-all">Residential</a>
+                </div>
+
+                <!-- CTA -->
+                <div class="hidden md:block">
+                     <a href="#contact" class="px-6 py-2.5 bg-brand-dark text-white text-sm font-semibold rounded-full shadow-lg hover:shadow-xl hover:bg-brand-magenta transition duration-300 flex items-center gap-2">
+                        Get Verified Deals <i class="fa-solid fa-arrow-right text-xs"></i>
                     </a>
                 </div>
 
                 <!-- Mobile Hamburger -->
                 <div class="md:hidden">
-                    <button onclick="toggleMenu()" class="text-slate-800 focus:outline-none p-4 rounded-full active:bg-gray-100">
-                        <i class="fa-solid fa-bars-staggered text-2xl"></i>
+                    <button onclick="toggleMenu()" class="text-slate-800 focus:outline-none p-2 rounded-lg hover:bg-slate-100">
+                        <div class="space-y-1.5">
+                            <span class="block w-6 h-0.5 bg-slate-800"></span>
+                            <span class="block w-4 h-0.5 bg-slate-800 ml-auto"></span>
+                            <span class="block w-5 h-0.5 bg-slate-800 ml-auto"></span>
+                        </div>
                     </button>
                 </div>
             </div>
         </div>
-        <!-- Mobile Menu Dropdown -->
-        <div id="mobile-menu" class="hidden md:hidden bg-white/95 backdrop-blur-xl border-t border-gray-100 absolute w-full shadow-xl">
-            <div class="px-4 pt-4 pb-6 space-y-3">
-                <a href="#home" onclick="toggleMenu()" class="block px-3 py-3 text-lg font-medium text-gray-700 hover:bg-pink-50 rounded-lg active:scale-95 transition-transform">Home</a>
-                <a href="#investment" onclick="toggleMenu()" class="block px-3 py-3 text-lg font-medium text-gray-700 hover:bg-pink-50 rounded-lg active:scale-95 transition-transform">Industrial Investment</a>
-                <a href="#residential" onclick="toggleMenu()" class="block px-3 py-3 text-lg font-medium text-gray-700 hover:bg-pink-50 rounded-lg active:scale-95 transition-transform">Residential Homes</a>
-                <a href="#contact" onclick="toggleMenu()" class="block px-3 py-3 text-lg font-bold text-brand-magenta bg-pink-50 rounded-lg active:scale-95 transition-transform">Contact Us</a>
+        
+        <!-- Mobile Menu Overlay -->
+        <div id="mobile-menu" class="hidden md:hidden absolute top-20 left-4 right-4 glass-panel rounded-2xl shadow-2xl p-4 transform origin-top transition-all duration-300 z-40">
+            <div class="flex flex-col space-y-2">
+                <a href="#home" onclick="toggleMenu()" class="px-4 py-3 rounded-xl hover:bg-white/60 font-medium text-slate-700">Home</a>
+                <a href="#investment" onclick="toggleMenu()" class="px-4 py-3 rounded-xl hover:bg-white/60 font-medium text-slate-700">Industrial Investment</a>
+                <a href="#residential" onclick="toggleMenu()" class="px-4 py-3 rounded-xl hover:bg-white/60 font-medium text-slate-700">Residential Homes</a>
+                <a href="#contact" onclick="toggleMenu()" class="mt-2 px-4 py-3 rounded-xl bg-brand-magenta/10 text-brand-magenta font-bold text-center">Contact Us</a>
             </div>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <header id="home" class="hero-section relative h-screen min-h-[600px] flex items-center justify-center bg-brand-dark">
-        <!-- Dark Overlay -->
-        <div class="absolute inset-0 bg-gradient-to-br from-brand-dark/90 via-brand-dark/70 to-brand-magenta/30"></div>
+    <header id="home" class="relative h-screen min-h-[660px] flex items-center justify-center overflow-hidden">
+        <!-- Background Image with Parallax & Overlay -->
+        <div class="absolute inset-0 z-0">
+             <div class="absolute inset-0 bg-gradient-to-b from-slate-900/60 via-slate-900/40 to-slate-900/80 z-10"></div>
+             <img src="https://images.unsplash.com/photo-1600596542815-e32cb718d61b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80" 
+                  alt="Modern Architecture" 
+                  class="w-full h-full object-cover object-center scale-105 animate-[kenburns_20s_infinite_alternate]">
+        </div>
         
-        <div class="relative z-10 container mx-auto px-4 text-center mt-16" data-aos="fade-up" data-aos-duration="1000">
-            <span class="inline-block py-1 px-3 rounded-full bg-brand-gold/20 text-brand-gold border border-brand-gold/50 text-sm font-bold tracking-wide mb-4 backdrop-blur-sm">
-                <i class="fa-solid fa-star mr-1"></i> No. 1 Trusted Agent in Ambernath
-            </span>
-            <h1 class="text-5xl md:text-7xl font-serif font-bold text-white leading-tight mb-6 drop-shadow-2xl">
-                Find Your <span class="text-gradient">Dream Space</span><br>Secure Your Future.
+        <div class="relative z-20 container mx-auto px-4 text-center mt-12" data-aos="fade-up" data-aos-duration="1200">
+            <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white text-sm font-medium mb-8">
+                <span class="w-2 h-2 rounded-full bg-brand-gold animate-pulse"></span>
+                No. 1 Trusted Agent in Ambernath
+            </div>
+            
+            <h1 class="text-5xl md:text-7xl lg:text-8xl font-serif font-bold text-white leading-[1.1] mb-6 tracking-tight drop-shadow-2xl">
+                Find Space For <br/>
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-white via-brand-gold to-white">Your Ambitions.</span>
             </h1>
-            <p class="text-xl text-gray-300 mb-10 max-w-2xl mx-auto font-light leading-relaxed">
-                Specializing in Industrial NA Plots, Luxury Row Houses, and Budget Flats in Vadvali Section. Verified papers, zero hidden costs.
+            
+            <p class="text-lg md:text-xl text-slate-200 mb-10 max-w-2xl mx-auto font-light leading-relaxed tracking-wide">
+                Specializing in <span class="text-white font-medium">Industrial NA Plots</span>, Luxury Row Houses, and Budget Flats in Vadvali Section. Verified papers, zero hidden costs.
             </p>
-            <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                <a href="#residential" class="px-8 py-4 bg-brand-gold text-brand-dark font-bold rounded-lg shadow-[0_0_20px_rgba(251,191,36,0.4)] hover:bg-brand-goldLight transition transform active:scale-95">
-                    View Homes
+            
+            <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                <a href="#residential" class="w-full sm:w-auto px-8 py-4 bg-brand-gold text-brand-dark font-bold rounded-full shadow-[0_0_30px_rgba(251,191,36,0.3)] hover:bg-yellow-400 hover:scale-105 transition-all duration-300">
+                    Explore Homes
                 </a>
-                <a href="#investment" class="px-8 py-4 bg-transparent border-2 border-white text-white font-bold rounded-lg hover:bg-white hover:text-brand-dark transition transform active:scale-95">
+                <a href="#investment" class="w-full sm:w-auto px-8 py-4 bg-white/10 backdrop-blur-md border border-white/30 text-white font-bold rounded-full hover:bg-white hover:text-brand-dark hover:scale-105 transition-all duration-300">
                     Land Investment
                 </a>
             </div>
             
-            <!-- Quick Stats -->
-            <div class="mt-16 grid grid-cols-2 md:grid-cols-4 gap-8 border-t border-white/10 pt-8 max-w-4xl mx-auto">
-                <div class="p-2">
-                    <div class="text-3xl font-bold text-white">500+</div>
-                    <div class="text-sm text-gray-400">Happy Families</div>
+            <!-- Glass Stats Bar -->
+            <div class="mt-16 mx-auto max-w-4xl glass-panel rounded-2xl p-6 md:p-8 grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-12 border-t border-white/20">
+                <div class="text-center">
+                    <div class="text-3xl font-bold text-brand-dark">500+</div>
+                    <div class="text-xs font-semibold text-slate-500 uppercase tracking-wider mt-1">Families</div>
                 </div>
-                <div class="p-2">
-                    <div class="text-3xl font-bold text-white">50+</div>
-                    <div class="text-sm text-gray-400">Acres Sold</div>
+                <div class="text-center border-l border-slate-200">
+                    <div class="text-3xl font-bold text-brand-dark">50+</div>
+                    <div class="text-xs font-semibold text-slate-500 uppercase tracking-wider mt-1">Acres</div>
                 </div>
-                <div class="p-2">
-                    <div class="text-3xl font-bold text-white">100%</div>
-                    <div class="text-sm text-gray-400">Clear Titles</div>
+                <div class="text-center border-l border-slate-200">
+                    <div class="text-3xl font-bold text-brand-dark">100%</div>
+                    <div class="text-xs font-semibold text-slate-500 uppercase tracking-wider mt-1">Legit</div>
                 </div>
-                <div class="p-2">
-                    <div class="text-3xl font-bold text-white">10+</div>
-                    <div class="text-sm text-gray-400">Years Trust</div>
+                <div class="text-center border-l border-slate-200">
+                    <div class="text-3xl font-bold text-brand-dark">10yr</div>
+                    <div class="text-xs font-semibold text-slate-500 uppercase tracking-wider mt-1">Trust</div>
                 </div>
             </div>
-        </div>
-        
-        <!-- Wave Bottom -->
-        <div class="absolute bottom-0 w-full leading-none z-20 pointer-events-none">
-            <svg class="block w-full h-12 md:h-24 text-slate-50" viewBox="0 0 1440 320" preserveAspectRatio="none">
-                <path fill="currentColor" fill-opacity="1" d="M0,224L48,213.3C96,203,192,181,288,181.3C384,181,480,203,576,224C672,245,768,267,864,261.3C960,256,1056,224,1152,197.3C1248,171,1344,149,1392,138.7L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
-            </svg>
         </div>
     </header>
 
-    <!-- MAGENTA SECTION: High Value Investment -->
-    <section id="investment" class="py-20 bg-slate-50 relative overflow-hidden">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16" data-aos="fade-up">
-                <h2 class="text-sm font-bold tracking-widest text-brand-magenta uppercase mb-2">For High ROI Seekers</h2>
-                <h3 class="text-3xl md:text-5xl font-serif font-bold text-brand-dark">Premium Land Opportunities</h3>
-                <p class="mt-4 text-gray-600 max-w-2xl mx-auto">Don't just buy property, buy potential. We specialize in large-scale Industrial and NA land deals.</p>
+    <!-- Bento Grid Section: Investment -->
+    <section id="investment" class="py-24 relative overflow-hidden">
+        <!-- Abstract Background blobs -->
+        <div class="absolute top-0 right-0 w-[500px] h-[500px] bg-brand-magenta/5 rounded-full blur-3xl pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-4">
+                <div data-aos="fade-right">
+                    <span class="text-brand-magenta font-bold tracking-widest uppercase text-xs mb-2 block">High ROI Opportunities</span>
+                    <h2 class="text-4xl md:text-5xl font-serif font-bold text-slate-900">Industrial & Land</h2>
+                </div>
+                <p class="text-slate-500 max-w-md text-sm md:text-base text-right md:text-right text-left">
+                    Strategic land parcels verified for immediate development across Maharashtra & Gujarat.
+                </p>
             </div>
 
-            <div class="relative bg-gradient-to-r from-brand-dark via-purple-900 to-brand-magenta rounded-3xl p-1 shadow-2xl overflow-hidden" data-aos="zoom-in">
-                <div class="absolute top-0 right-0 -mr-20 -mt-20 w-80 h-80 bg-white opacity-10 blur-3xl rounded-full"></div>
+            <!-- Bento Grid Layout -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 auto-rows-[300px]">
                 
-                <div class="bg-brand-dark/40 backdrop-blur-sm rounded-[20px] p-8 md:p-12 text-white grid md:grid-cols-2 gap-12 items-center relative z-10">
-                    <div>
-                        <h4 class="text-3xl font-bold mb-6">Industrial NA Plots & JV</h4>
-                        <ul class="space-y-4">
-                            <li class="flex items-start">
-                                <i class="fa-solid fa-circle-check text-brand-gold mt-1 mr-3 text-xl"></i>
-                                <div>
-                                    <strong class="block text-lg">Strategic Locations</strong>
-                                    <span class="text-gray-300 text-sm">Close to MIDC areas, Highways, and Railway connectivity.</span>
-                                </div>
-                            </li>
-                            <li class="flex items-start">
-                                <i class="fa-solid fa-circle-check text-brand-gold mt-1 mr-3 text-xl"></i>
-                                <div>
-                                    <strong class="block text-lg">Clear Documentation</strong>
-                                    <span class="text-gray-300 text-sm">7/12 extract verified, Zone certificates available.</span>
-                                </div>
-                            </li>
-                            <li class="flex items-start">
-                                <i class="fa-solid fa-circle-check text-brand-gold mt-1 mr-3 text-xl"></i>
-                                <div>
-                                    <strong class="block text-lg">High Appreciation</strong>
-                                    <span class="text-gray-300 text-sm">Proven track record of 20-30% annual growth in select zones.</span>
-                                </div>
-                            </li>
-                        </ul>
-                        <div class="mt-8">
-                            <a href="#contact" class="inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-bold rounded-md text-brand-magenta bg-white hover:bg-gray-100 transition shadow-lg active:scale-95">
-                                Download Brochure <i class="fa-solid fa-download ml-2"></i>
+                <!-- Main Feature (Large) -->
+                <div class="md:col-span-2 row-span-2 rounded-3xl overflow-hidden relative group shadow-glass" data-aos="zoom-in">
+                    <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" class="absolute inset-0 w-full h-full object-cover transition duration-700 group-hover:scale-110" alt="Land">
+                    <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/20 to-transparent p-8 flex flex-col justify-end">
+                        <div class="transform translate-y-4 transition duration-500 group-hover:translate-y-0">
+                            <h3 class="text-3xl font-bold text-white mb-2">Industrial NA Plots</h3>
+                            <p class="text-slate-300 mb-6 max-w-lg">Prime industrial zones near MIDC with excellent connectivity. Perfect for warehousing and factories.</p>
+                            <a href="#contact" class="inline-flex items-center gap-2 px-5 py-2.5 bg-white/20 backdrop-blur-md border border-white/30 rounded-full text-white text-sm font-semibold hover:bg-white hover:text-brand-dark transition-all">
+                                Request Layout Map <i class="fa-solid fa-arrow-right"></i>
                             </a>
                         </div>
                     </div>
-                    <div class="relative h-64 md:h-full min-h-[300px] rounded-xl overflow-hidden shadow-2xl border border-white/20 group">
-                        <!-- Updated to Construction/Land related image -->
-                        <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Industrial Land Investment" class="absolute inset-0 w-full h-full object-cover transform group-hover:scale-110 transition duration-700">
-                        <div class="absolute bottom-0 left-0 bg-gradient-to-t from-black/80 to-transparent p-6 w-full">
-                            <span class="text-brand-gold font-bold">Maharashtra & Gujarat</span>
+                </div>
+
+                <!-- Secondary Feature (Top Right) -->
+                <div class="glass-card rounded-3xl p-8 flex flex-col justify-between group" data-aos="fade-left" data-aos-delay="100">
+                    <div class="w-12 h-12 rounded-2xl bg-brand-gold/20 text-brand-gold flex items-center justify-center text-xl mb-4 group-hover:scale-110 transition duration-300">
+                        <i class="fa-solid fa-file-signature"></i>
+                    </div>
+                    <div>
+                        <h4 class="text-xl font-bold text-slate-900 mb-2">Clear Titles</h4>
+                        <p class="text-slate-500 text-sm">7/12 extracts verified by legal experts. We ensure 100% transparent ownership transfer.</p>
+                    </div>
+                </div>
+
+                <!-- Tertiary Feature (Bottom Right) -->
+                <div class="glass-card rounded-3xl p-8 flex flex-col justify-between group bg-brand-dark text-white relative overflow-hidden" data-aos="fade-left" data-aos-delay="200">
+                    <div class="absolute top-0 right-0 w-32 h-32 bg-brand-magenta rounded-full blur-[60px] opacity-50"></div>
+                    <div class="relative z-10">
+                        <div class="w-12 h-12 rounded-2xl bg-white/10 flex items-center justify-center text-xl mb-4">
+                            <i class="fa-solid fa-chart-line text-brand-magenta"></i>
                         </div>
+                        <h4 class="text-xl font-bold mb-2">High Appreciation</h4>
+                        <p class="text-slate-300 text-sm">Invest in developing zones of Ambernath & Badlapur for 20-30% annual growth.</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- RESIDENTIAL SECTION -->
-    <section id="residential" class="py-20 bg-white">
+    <!-- Residential Section: Floating Cards -->
+    <section id="residential" class="py-24">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex flex-col md:flex-row justify-between items-end mb-12" data-aos="fade-right">
-                <div>
-                    <h2 class="text-sm font-bold tracking-widest text-brand-magenta uppercase mb-2">Residential Collections</h2>
-                    <h3 class="text-3xl md:text-5xl font-serif font-bold text-brand-dark">Find Your Perfect Home</h3>
-                </div>
-                <div class="hidden md:block">
-                    <a href="#contact" class="text-brand-magenta font-bold hover:underline">View All Listings <i class="fa-solid fa-arrow-right ml-1"></i></a>
-                </div>
+            <div class="text-center mb-20" data-aos="fade-up">
+                <span class="px-3 py-1 rounded-full border border-slate-200 text-slate-500 text-xs font-bold uppercase tracking-widest bg-white">Residential</span>
+                <h2 class="text-4xl md:text-6xl font-serif font-bold text-slate-900 mt-4">Curated Living</h2>
             </div>
 
             <div class="grid md:grid-cols-3 gap-8">
-                <!-- Card 1 -->
-                <div class="group bg-white rounded-2xl border border-gray-100 shadow-lg hover:shadow-2xl hover:shadow-brand-magenta/10 transition duration-500 overflow-hidden" data-aos="fade-up" data-aos-delay="0">
-                    <div class="relative h-64 overflow-hidden">
-                        <!-- Updated to cozy interior -->
-                        <img src="https://images.unsplash.com/photo-1493809842364-78817add7ffb?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="1BHK Flat Interior" class="w-full h-full object-cover transform group-hover:scale-110 transition duration-700">
-                        <div class="absolute top-4 right-4 bg-brand-gold text-brand-dark text-xs font-bold px-3 py-1 rounded shadow-sm">Hot Deal</div>
-                    </div>
-                    <div class="p-6">
-                        <div class="flex items-center gap-2 text-sm text-gray-500 mb-3">
-                            <i class="fa-solid fa-location-dot text-brand-magenta"></i> Vadvali Section
+                <!-- Listing 1 -->
+                <div class="glass-card rounded-[2rem] overflow-hidden group" data-aos="fade-up">
+                    <div class="relative h-72 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1493809842364-78817add7ffb?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover transition duration-700 group-hover:scale-105" alt="Flat">
+                        <div class="absolute top-4 left-4">
+                             <span class="px-3 py-1 bg-white/90 backdrop-blur text-brand-dark text-xs font-bold rounded-full shadow-sm">Vadvali Section</span>
                         </div>
-                        <h4 class="text-xl font-bold text-slate-900 mb-2 group-hover:text-brand-magenta transition">1RK, 1BHK & 2BHK Smart Homes</h4>
-                        <p class="text-gray-600 text-sm mb-4">Near Bhakti Shakti Chowk. Minimal paperwork, maximum comfort.</p>
-                        <div class="border-t border-gray-100 pt-4 flex justify-between items-center">
-                            <span class="text-brand-dark font-bold">₹ Budget Friendly</span>
-                            <button onclick="scrollToContact('1BHK/2BHK')" class="w-10 h-10 rounded-full bg-slate-100 flex items-center justify-center text-brand-magenta group-hover:bg-brand-magenta group-hover:text-white transition active:scale-90">
-                                <i class="fa-solid fa-arrow-right"></i>
-                            </button>
+                        <div class="absolute bottom-4 right-4">
+                             <span class="px-3 py-1 bg-brand-gold text-brand-dark text-xs font-bold rounded-full shadow-sm">₹ Budget Friendly</span>
                         </div>
                     </div>
-                </div>
-
-                <!-- Card 2 -->
-                <div class="group bg-white rounded-2xl border border-gray-100 shadow-lg hover:shadow-2xl hover:shadow-brand-magenta/10 transition duration-500 overflow-hidden" data-aos="fade-up" data-aos-delay="100">
-                    <div class="relative h-64 overflow-hidden">
-                        <!-- Updated to modern villa -->
-                        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Luxury Row House Ambernath" class="w-full h-full object-cover transform group-hover:scale-110 transition duration-700">
-                        <div class="absolute top-4 right-4 bg-brand-magenta text-white text-xs font-bold px-3 py-1 rounded shadow-sm">Premium</div>
-                    </div>
-                    <div class="p-6">
-                        <div class="flex items-center gap-2 text-sm text-gray-500 mb-3">
-                            <i class="fa-solid fa-location-dot text-brand-magenta"></i> Ambernath East
-                        </div>
-                        <h4 class="text-xl font-bold text-slate-900 mb-2 group-hover:text-brand-magenta transition">Luxury Row Houses</h4>
-                        <p class="text-gray-600 text-sm mb-4">Independent living with private terrace and parking. Gated community feel.</p>
-                        <div class="border-t border-gray-100 pt-4 flex justify-between items-center">
-                            <span class="text-brand-dark font-bold">₹ 70L - 90L</span>
-                            <button onclick="scrollToContact('Row House')" class="w-10 h-10 rounded-full bg-slate-100 flex items-center justify-center text-brand-magenta group-hover:bg-brand-magenta group-hover:text-white transition active:scale-90">
-                                <i class="fa-solid fa-arrow-right"></i>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Card 3 -->
-                <div class="group bg-white rounded-2xl border border-gray-100 shadow-lg hover:shadow-2xl hover:shadow-brand-magenta/10 transition duration-500 overflow-hidden" data-aos="fade-up" data-aos-delay="200">
-                    <div class="relative h-64 overflow-hidden">
-                        <!-- Updated to keys in hand -->
-                        <img src="https://images.unsplash.com/photo-1560184897-ae75f418493e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Rental Properties" class="w-full h-full object-cover transform group-hover:scale-110 transition duration-700">
-                        <div class="absolute top-4 right-4 bg-blue-600 text-white text-xs font-bold px-3 py-1 rounded shadow-sm">Ready to Move</div>
-                    </div>
-                    <div class="p-6">
-                        <div class="flex items-center gap-2 text-sm text-gray-500 mb-3">
-                            <i class="fa-solid fa-location-dot text-brand-magenta"></i> Prime Areas
-                        </div>
-                        <h4 class="text-xl font-bold text-slate-900 mb-2 group-hover:text-brand-magenta transition">Rent / Lease</h4>
-                        <p class="text-gray-600 text-sm mb-4">Shops for business or flats for family. Verified owners only.</p>
-                        <div class="border-t border-gray-100 pt-4 flex justify-between items-center">
-                            <span class="text-brand-dark font-bold">Call for Rates</span>
-                            <button onclick="scrollToContact('Rent')" class="w-10 h-10 rounded-full bg-slate-100 flex items-center justify-center text-brand-magenta group-hover:bg-brand-magenta group-hover:text-white transition active:scale-90">
-                                <i class="fa-solid fa-arrow-right"></i>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- CONTACT FORM SECTION -->
-    <section id="contact" class="py-20 bg-brand-dark text-white relative overflow-hidden">
-        <!-- Background decorative blob -->
-        <div class="absolute top-0 left-0 w-full h-full overflow-hidden opacity-20 pointer-events-none">
-             <div class="absolute -top-24 -left-24 w-96 h-96 bg-brand-magenta rounded-full blur-3xl"></div>
-             <div class="absolute bottom-0 right-0 w-96 h-96 bg-blue-600 rounded-full blur-3xl"></div>
-        </div>
-
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div class="bg-white/5 backdrop-blur-lg border border-white/10 rounded-3xl overflow-hidden shadow-2xl flex flex-col md:flex-row">
-                <!-- Info Side -->
-                <div class="md:w-5/12 p-10 bg-brand-magenta/90 text-white flex flex-col justify-between">
-                    <div>
-                        <h3 class="text-3xl font-serif font-bold mb-6">Let's Discuss Your Future</h3>
-                        <p class="text-pink-100 mb-8">Whether you are buying your first home or investing in industrial land, we are here to guide you.</p>
-                        
-                        <div class="space-y-6">
-                            <div class="flex items-center">
-                                <div class="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center mr-4">
-                                    <i class="fa-solid fa-phone"></i>
-                                </div>
-                                <div>
-                                    <p class="text-xs text-pink-200 uppercase tracking-wide">Call Us</p>
-                                    <p class="font-bold text-lg">+91 86690 95752</p>
-                                    <p class="text-sm opacity-80">Available 9 AM - 9 PM</p>
-                                </div>
-                            </div>
-                            <div class="flex items-center">
-                                <div class="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center mr-4">
-                                    <i class="fa-solid fa-location-dot"></i>
-                                </div>
-                                <div>
-                                    <p class="text-xs text-pink-200 uppercase tracking-wide">Visit Office</p>
-                                    <p class="font-bold">Vadvali Section</p>
-                                    <p class="text-sm">Near Bhakti Shakti Chowk, Ambernath (E)</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="mt-12 md:mt-0">
-                        <div class="flex space-x-4">
-                            <a href="https://wa.me/918669095752" class="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center hover:bg-white hover:text-brand-magenta transition"><i class="fa-brands fa-whatsapp"></i></a>
-                            <a href="#" class="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center hover:bg-white hover:text-brand-magenta transition"><i class="fa-brands fa-instagram"></i></a>
-                            <a href="#" class="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center hover:bg-white hover:text-brand-magenta transition"><i class="fa-brands fa-facebook-f"></i></a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Form Side -->
-                <div class="md:w-7/12 p-10 bg-white">
-                    <h3 class="text-2xl font-bold text-gray-800 mb-6">Request a Site Visit via WhatsApp</h3>
-                    <form onsubmit="submitForm(event)" class="space-y-5">
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
-                            <div>
-                                <label class="block text-sm font-medium text-gray-700 mb-1">Your Name</label>
-                                <!-- text-base ensures 16px font size to prevent IOS zoom -->
-                                <input type="text" id="user-name" required class="w-full px-4 py-3 rounded-lg bg-gray-50 border border-gray-200 focus:border-brand-magenta focus:ring-2 focus:ring-pink-200 transition outline-none text-gray-800 text-base" placeholder="e.g. Rahul Patil">
-                            </div>
-                            <div>
-                                <label class="block text-sm font-medium text-gray-700 mb-1">Phone Number</label>
-                                <input type="tel" id="user-phone" required class="w-full px-4 py-3 rounded-lg bg-gray-50 border border-gray-200 focus:border-brand-magenta focus:ring-2 focus:ring-pink-200 transition outline-none text-gray-800 text-base" placeholder="+91 99999 99999">
-                            </div>
-                        </div>
-                        <div>
-                            <label class="block text-sm font-medium text-gray-700 mb-1">Interested In</label>
-                            <select id="interest-select" class="w-full px-4 py-3 rounded-lg bg-gray-50 border border-gray-200 focus:border-brand-magenta focus:ring-2 focus:ring-pink-200 transition outline-none text-gray-800 text-base">
-                                <option>Buy 1BHK/2BHK Flat</option>
-                                <option>Industrial NA Plot</option>
-                                <option>Row House / Bungalow</option>
-                                <option>Rent a Property</option>
-                            </select>
-                        </div>
-                        <div>
-                            <label class="block text-sm font-medium text-gray-700 mb-1">Message (Optional)</label>
-                            <textarea id="user-message" rows="3" class="w-full px-4 py-3 rounded-lg bg-gray-50 border border-gray-200 focus:border-brand-magenta focus:ring-2 focus:ring-pink-200 transition outline-none text-gray-800 text-base" placeholder="Any specific requirement?"></textarea>
-                        </div>
-                        <button type="submit" class="w-full py-4 bg-green-500 text-white font-bold rounded-lg shadow-xl hover:bg-green-600 transition transform hover:-translate-y-1 active:scale-95">
-                            <i class="fa-brands fa-whatsapp mr-2 text-xl"></i> Send on WhatsApp
+                    <div class="p-8">
+                        <h3 class="text-2xl font-bold text-slate-900 mb-2">Smart 1BHK & 2BHK</h3>
+                        <p class="text-slate-500 text-sm mb-6 line-clamp-2">Modern apartments near Bhakti Shakti Chowk designed for first-time homebuyers.</p>
+                        <button onclick="scrollToContact('1BHK/2BHK')" class="w-full py-3 rounded-xl border border-slate-200 text-slate-700 font-semibold hover:bg-brand-dark hover:text-white hover:border-transparent transition-all">
+                            View Details
                         </button>
-                    </form>
+                    </div>
+                </div>
+
+                <!-- Listing 2 -->
+                <div class="glass-card rounded-[2rem] overflow-hidden group" data-aos="fade-up" data-aos-delay="100">
+                    <div class="relative h-72 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover transition duration-700 group-hover:scale-105" alt="Villa">
+                        <div class="absolute top-4 left-4">
+                             <span class="px-3 py-1 bg-brand-magenta text-white text-xs font-bold rounded-full shadow-sm">Premium</span>
+                        </div>
+                    </div>
+                    <div class="p-8 relative">
+                        <!-- Decorative glow -->
+                        <div class="absolute inset-0 bg-gradient-to-br from-brand-magenta/5 to-transparent pointer-events-none"></div>
+                        <h3 class="text-2xl font-bold text-slate-900 mb-2">Luxury Row Houses</h3>
+                        <p class="text-slate-500 text-sm mb-6 line-clamp-2">Independent living with private terrace and parking. Gated community security.</p>
+                        <button onclick="scrollToContact('Row House')" class="w-full py-3 rounded-xl bg-brand-magenta text-white font-semibold shadow-lg shadow-brand-magenta/30 hover:shadow-brand-magenta/50 transition-all">
+                            Check Availability
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Listing 3 -->
+                <div class="glass-card rounded-[2rem] overflow-hidden group" data-aos="fade-up" data-aos-delay="200">
+                    <div class="relative h-72 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1560184897-ae75f418493e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" class="w-full h-full object-cover transition duration-700 group-hover:scale-105" alt="Rent">
+                        <div class="absolute top-4 left-4">
+                             <span class="px-3 py-1 bg-blue-500 text-white text-xs font-bold rounded-full shadow-sm">Rentals</span>
+                        </div>
+                    </div>
+                    <div class="p-8">
+                        <h3 class="text-2xl font-bold text-slate-900 mb-2">Commercial & Residential</h3>
+                        <p class="text-slate-500 text-sm mb-6 line-clamp-2">Shops for business or flats for family. High-footfall areas available.</p>
+                        <button onclick="scrollToContact('Rent')" class="w-full py-3 rounded-xl border border-slate-200 text-slate-700 font-semibold hover:bg-brand-dark hover:text-white hover:border-transparent transition-all">
+                            Enquire Rates
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="bg-gray-900 text-gray-400 py-12 border-t border-gray-800 mb-20 md:mb-0">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-6">
-            <div class="text-center md:text-left">
-                <span class="text-2xl font-serif font-bold text-white">Samarth<span class="text-brand-magenta">Properties</span></span>
-                <p class="text-sm mt-2">Trust. Transparency. Timing.</p>
+    <!-- Modern Glass Contact Section -->
+    <section id="contact" class="py-24 relative">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="glass-panel rounded-[2.5rem] p-2 md:p-3 shadow-2xl overflow-hidden">
+                <div class="bg-brand-dark rounded-[2rem] overflow-hidden flex flex-col md:flex-row">
+                    
+                    <!-- Left: Brand Info -->
+                    <div class="md:w-5/12 p-10 md:p-12 bg-gradient-to-br from-brand-magenta to-purple-800 text-white relative overflow-hidden">
+                        <div class="absolute top-0 left-0 w-full h-full bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10"></div>
+                        
+                        <div class="relative z-10 flex flex-col h-full justify-between">
+                            <div>
+                                <h3 class="text-3xl font-serif font-bold mb-4">Start Your Journey.</h3>
+                                <p class="text-pink-100/80 mb-8 text-sm leading-relaxed">We connect you directly with the property owners. No middlemen, no confusion.</p>
+                            </div>
+                            
+                            <div class="space-y-6">
+                                <a href="tel:+918669095752" class="flex items-center gap-4 group">
+                                    <div class="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center group-hover:bg-white group-hover:text-brand-magenta transition-colors">
+                                        <i class="fa-solid fa-phone"></i>
+                                    </div>
+                                    <div>
+                                        <p class="text-xs text-pink-200 uppercase tracking-widest">Direct Line</p>
+                                        <p class="font-bold text-lg">+91 86690 95752</p>
+                                    </div>
+                                </a>
+                                
+                                <div class="flex items-center gap-4">
+                                    <div class="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center">
+                                        <i class="fa-solid fa-location-dot"></i>
+                                    </div>
+                                    <div>
+                                        <p class="text-xs text-pink-200 uppercase tracking-widest">Office</p>
+                                        <p class="font-bold">Vadvali Section, Ambernath</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right: Form -->
+                    <div class="md:w-7/12 p-8 md:p-12 bg-white">
+                        <form onsubmit="submitForm(event)" class="space-y-6">
+                            <div class="grid grid-cols-2 gap-6">
+                                <div class="col-span-2 md:col-span-1">
+                                    <label class="block text-xs font-bold text-slate-400 uppercase tracking-wider mb-2">Your Name</label>
+                                    <input type="text" id="user-name" required class="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 focus:border-brand-magenta focus:ring-4 focus:ring-brand-magenta/10 transition outline-none text-slate-800 font-medium text-base" placeholder="John Doe">
+                                </div>
+                                <div class="col-span-2 md:col-span-1">
+                                    <label class="block text-xs font-bold text-slate-400 uppercase tracking-wider mb-2">Phone</label>
+                                    <input type="tel" id="user-phone" required class="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 focus:border-brand-magenta focus:ring-4 focus:ring-brand-magenta/10 transition outline-none text-slate-800 font-medium text-base" placeholder="+91">
+                                </div>
+                            </div>
+                            <div>
+                                <label class="block text-xs font-bold text-slate-400 uppercase tracking-wider mb-2">Interest</label>
+                                <div class="relative">
+                                    <select id="interest-select" class="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 focus:border-brand-magenta focus:ring-4 focus:ring-brand-magenta/10 transition outline-none text-slate-800 font-medium text-base appearance-none">
+                                        <option>Buying 1BHK/2BHK Flat</option>
+                                        <option>Industrial NA Plot</option>
+                                        <option>Luxury Row House</option>
+                                        <option>Rental Property</option>
+                                    </select>
+                                    <div class="absolute inset-y-0 right-0 flex items-center px-4 pointer-events-none text-slate-500">
+                                        <i class="fa-solid fa-chevron-down text-xs"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <label class="block text-xs font-bold text-slate-400 uppercase tracking-wider mb-2">Message</label>
+                                <textarea id="user-message" rows="3" class="w-full px-4 py-3 rounded-xl bg-slate-50 border border-slate-200 focus:border-brand-magenta focus:ring-4 focus:ring-brand-magenta/10 transition outline-none text-slate-800 font-medium text-base" placeholder="When can I visit?"></textarea>
+                            </div>
+                            
+                            <button type="submit" class="w-full py-4 bg-[#25D366] hover:bg-[#128C7E] text-white font-bold rounded-xl shadow-lg shadow-green-500/30 transition-all transform hover:-translate-y-1 flex justify-center items-center gap-2">
+                                <i class="fa-brands fa-whatsapp text-xl"></i> Chat on WhatsApp
+                            </button>
+                        </form>
+                    </div>
+                </div>
             </div>
-            <div class="flex gap-6 text-sm font-medium">
+        </div>
+    </section>
+
+    <!-- Minimal Footer -->
+    <footer class="bg-brand-dark text-slate-400 py-12 relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-6 relative z-10">
+            <div>
+                <span class="font-serif font-bold text-2xl text-white tracking-tight">Samarth<span class="text-brand-magenta">Properties</span></span>
+                <p class="text-xs mt-2 opacity-60">© 2024. Crafted for Ambernath.</p>
+            </div>
+            <div class="flex gap-8 text-sm font-medium">
                 <a href="#home" class="hover:text-white transition">Home</a>
                 <a href="#investment" class="hover:text-white transition">Industrial</a>
                 <a href="#residential" class="hover:text-white transition">Residential</a>
             </div>
-            <div class="text-sm">
-                &copy; 2024 Samarth Properties. All rights reserved.
-            </div>
         </div>
     </footer>
 
-    <!-- Mobile Sticky Action Bar -->
-    <div class="fixed bottom-0 left-0 w-full bg-white sticky-bar-shadow flex md:hidden z-50">
-        <a href="tel:+918669095752" class="flex-1 flex flex-col items-center justify-center py-3 bg-white text-brand-dark border-r border-gray-100 active:bg-gray-50">
-            <i class="fa-solid fa-phone text-brand-magenta text-lg mb-1 animate-pulse"></i>
-            <span class="text-xs font-bold">Call Now</span>
-        </a>
-        <a href="https://wa.me/918669095752?text=I%20am%20interested%20in%20property" class="flex-1 flex flex-col items-center justify-center py-3 bg-brand-magenta text-white active:bg-brand-magentaDeep">
-            <i class="fa-brands fa-whatsapp text-lg mb-1"></i>
-            <span class="text-xs font-bold">WhatsApp</span>
-        </a>
+    <!-- Floating Glass Dock (Mobile Only) -->
+    <!-- This replaces the standard sticky footer with a trendy iOS style floating dock -->
+    <div class="fixed bottom-6 left-4 right-4 z-50 md:hidden mobile-island-bar">
+        <div class="glass-nav rounded-2xl p-2 shadow-2xl border border-white/40 flex justify-between gap-2">
+            <a href="tel:+918669095752" class="flex-1 flex items-center justify-center gap-2 py-3.5 bg-brand-dark rounded-xl text-white font-bold shadow-lg">
+                <i class="fa-solid fa-phone animate-pulse"></i> Call
+            </a>
+            <a href="https://wa.me/918669095752?text=I%20am%20interested%20in%20property" class="flex-1 flex items-center justify-center gap-2 py-3.5 bg-[#25D366] rounded-xl text-white font-bold shadow-lg">
+                <i class="fa-brands fa-whatsapp text-lg"></i> Chat
+            </a>
+        </div>
     </div>
 
     <!-- Animation Script -->
@@ -490,6 +491,7 @@
             once: true,
             duration: 800,
             offset: 50,
+            easing: 'ease-out-cubic'
         });
 
         function toggleMenu() {
@@ -500,25 +502,19 @@
         function scrollToContact(interest) {
             const select = document.getElementById('interest-select');
             select.value = interest;
-            document.getElementById('interest-select').scrollIntoView({ behavior: 'smooth', block: 'center' });
+            document.getElementById('contact').scrollIntoView({ behavior: 'smooth', block: 'center' });
         }
 
         function submitForm(event) {
             event.preventDefault();
             
-            // Get form values
             const name = document.getElementById('user-name').value;
             const phone = document.getElementById('user-phone').value;
             const interest = document.getElementById('interest-select').value;
             const message = document.getElementById('user-message').value;
             
-            // Create WhatsApp message
-            const whatsappText = `*New Lead from Website*%0A------------------%0A*Name:* ${name}%0A*Phone:* ${phone}%0A*Interest:* ${interest}%0A*Message:* ${message}`;
-            
-            // Your WhatsApp number
+            const whatsappText = `*Hi Samarth Properties,*%0A%0AI am interested in: *${interest}*%0A%0AMy Details:%0AName: ${name}%0APhone: ${phone}%0AMessage: ${message}`;
             const phoneNumber = "918669095752";
-            
-            // Open WhatsApp
             const url = `https://wa.me/${phoneNumber}?text=${whatsappText}`;
             window.open(url, '_blank');
         }
